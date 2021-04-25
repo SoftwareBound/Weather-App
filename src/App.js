@@ -1,24 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Navbar from "./common/components/Navbar";
+import Search from "./common/components/Search";
+import ForecastContainer from "./weather/ForecastContainer";
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Favorites from "./favorites/Favorites";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <Navbar />
+        <div className="container">
+          <Switch>
+            <Provider store={store}>
+              <Route path="/favorites">
+                <Favorites />
+              </Route>
+              <Route exact path="/">
+                <div
+                  className="row search"
+                  style={{
+                    margin: "auto",
+                    width: "fit-content",
+                    marginTop: "30px",
+                  }}
+                >
+                  <Search />
+                </div>
+                <div
+                  className="row forecast-container"
+                  style={{
+                    margin: "auto",
+                    width: "90%",
+                    minHeight: "400px",
+                    marginTop: "30px",
+                    border: "solid",
+                  }}
+                >
+                  <ForecastContainer />
+                </div>
+              </Route>
+            </Provider>
+          </Switch>
+        </div>
+      </Router>
+    </>
   );
 }
 
