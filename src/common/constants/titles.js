@@ -3,3 +3,7 @@ export const navbarTitles = {
   HOME_NAV: "Home",
   FAV_NAV: "Favorites",
 };
+
+export const defaultCityName = {
+  DEFAULT_CITY_NAME: "Tel Aviv",
+};

@@ -1,12 +1,14 @@
-import { initialCityWeather } from "./initialState";
+import { weatherActions } from "../common/constants/actionType";
+
 export function weatherReducer(state = {}, action) {
   switch (action.type) {
-    case "test":
+    case weatherActions.LOAD_DEFAULT_CITY_WAETHER:
+      console.log(state);
+      return action.payload;
+    case "test1":
       console.log(state);
       return state;
-
     default:
-      console.log("this is a default case");
       return state;
   }
 }

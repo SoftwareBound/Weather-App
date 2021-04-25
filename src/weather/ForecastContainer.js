@@ -1,30 +1,44 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import ForecastHeader from "./ForecastHeader";
-import { urls } from "../common/constants/urls";
+import { currentCityData, currentCityWeather, fiveDay } from "../mockData";
 import { connect } from "react-redux";
-import { getCityData } from "../common/functions/getDataFromApi";
-
+import { getCurrentCityData } from "../common/functions/getDataFromApi";
+import { useDispatch } from "react-redux";
+import { defaultCityName } from "../common/constants/titles";
+import { weatherActions } from "../common/constants/actionType";
+import { getFormatedDayText } from "../common/functions/getFormatedDate";
 const ForecastContainer = ({ currentCity }) => {
   //here i make an api call get current forcast for tel aviv
-  const [currentCityForecast, setCurrentCityForecast] = useState({
-    cityName: "Tel Aviv",
-    value: "32",
-    unit: "C",
-    icon: `${urls.WEATHER_URL_PREFIX}01${urls.WEATHER_URL_SUFFIX}`,
-    description: "Sunny",
-  });
-  useEffect(() => {
-    console.log(Object.values(currentCity));
-    if (!Object.values(currentCity)) {
-      console.log("inside  if");
-      getCityData().then((res) => console.log(res));
-    }
-  }, []);
+  const dispatch = useDispatch();
 
+  useEffect(() => {
+    if (!Object.values(currentCity).length) {
+      dispatch({
+        type: weatherActions.LOAD_DEFAULT_CITY_WAETHER,
+        payload: {
+          cityName: defaultCityName.DEFAULT_CITY_NAME,
+          currentWeather: currentCityWeather[0],
+        },
+      });
+
+      //REAL API CALL
+      /* getCurrentCityData(
+        `${weatherUrls.CITY_CURRENT_WEATHER}${cityUrls.DEFAULT_CITY_WEATHER_ID}${weatherUrls.APIKEY_SUFFIX_URL}`
+      ).then((res) => dispatch({ type: "test", payload: res })); */
+    }
+    console.log(currentCity);
+  }, [currentCity]);
+  if (!Object.values(currentCity).length) {
+    return <div>Loading</div>;
+  }
+  const parseDate = (date) => {
+    const newDate = new Date(date);
+    return getFormatedDayText(newDate.getDay());
+  };
   return (
     <div className="container">
       <div className="row" style={{ marginTop: "15px" }}>
-        <ForecastHeader currentCityData={currentCityForecast} />
+        <ForecastHeader currentCityData={currentCity} />
       </div>
       <div
         className="row"
@@ -34,7 +48,7 @@ const ForecastContainer = ({ currentCity }) => {
           fontSize: "xx-large",
         }}
       >
-        {currentCityForecast.description}
+        {currentCity.currentWeather.WeatherText}
       </div>
       <div
         className="row"
@@ -44,11 +58,23 @@ const ForecastContainer = ({ currentCity }) => {
           paddingBlockStart: "10%",
         }}
       >
-        <div className="col">Day 1</div>
-        <div className="col">Day 2</div>
-        <div className="col">Day 3</div>
-        <div className="col">Day 4</div>
-        <div className="col">Day 5</div>
+        {fiveDay.DailyForecasts.map((day) => {
+          return (
+            <div
+              key={day.Date}
+              className="col"
+              style={{ border: "ridge", marginRight: "10px" }}
+            >
+              <div>{parseDate(day.Date)}</div>
+              {Number.parseInt(
+                (day.Temperature.Minimum.Value +
+                  day.Temperature.Maximum.Value) /
+                  2
+              )}{" "}
+              {day.Temperature.Minimum.Unit}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
@@ -59,4 +85,5 @@ const mapStateToProps = (state) => {
     currentCity: state,
   };
 };
+
 export default connect(mapStateToProps)(ForecastContainer);

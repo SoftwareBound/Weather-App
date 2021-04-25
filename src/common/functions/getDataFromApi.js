@@ -1,6 +1,6 @@
-export async function getCityData() {
-  const data = await fetch("https://swapi.dev/api/people/1/");
+export async function getCurrentCityData(url) {
+  const data = await fetch(url);
   const jsonData = await data.json();
-  console.log(jsonData);
+
   return jsonData;
 }

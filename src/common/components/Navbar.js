@@ -1,7 +1,6 @@
 import React from "react";
 import { navbarTitles } from "../constants/titles";
 import { iconsList } from "../constants/icons";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -26,10 +25,10 @@ const Navbar = () => {
               </a>
             </li>
             <li className="nav-item">
-              <Link to="/favorites">
-                <span>{navbarTitles.FAV_NAV}</span>
+              <a className="nav-link" href="/favorites">
+                <span> {navbarTitles.FAV_NAV}</span>
                 <span> {iconsList.FAV_ICON}</span>
-              </Link>
+              </a>
             </li>
           </ul>
         </div>

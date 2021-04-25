@@ -1,18 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
-import { store } from "../redux/store";
+
+import { iconUrls } from "../common/constants/urls";
 
 const ForecastHeader = ({ currentCityData }) => {
   const dispatch = useDispatch();
   const getStatus = () => {
-    dispatch({ type: "test" });
+    dispatch({ type: "test1" });
   };
+
   return (
     <div className="row">
       <div className="col-1">
         <img
-          src={currentCityData.icon}
-          alt={currentCityData.description}
+          src={`${iconUrls.WEATHER_URL_PREFIX}${
+            currentCityData.currentWeather.WeatherIcon < 10
+              ? `0${currentCityData.currentWeather.WeatherIcon}`
+              : `${currentCityData.currentWeather.WeatherIcon}`
+          }${iconUrls.WEATHER_URL_SUFFIX}`}
+          alt={currentCityData.currentWeather.WeatherText}
           style={{ marginRight: "20px", border: "outset" }}
         />
       </div>
@@ -21,7 +27,7 @@ const ForecastHeader = ({ currentCityData }) => {
         style={{ marginRight: "10px", marginLeft: "10px" }}
       >
         <div> {currentCityData.cityName}</div>
-        {` ${currentCityData.value} ${currentCityData.unit.toLowerCase()}`}
+        {` ${currentCityData.currentWeather.Temperature.Metric.Value} ${currentCityData.currentWeather.Temperature.Metric.Unit}`}
       </div>
       <div className="col-5" style={{ textAlign: "right" }}>
         <button onClick={getStatus}>Add to Favorites</button>

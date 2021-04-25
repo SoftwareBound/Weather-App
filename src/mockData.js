@@ -1,12 +1,12 @@
 export const fiveDay = {
   Headline: {
-    EffectiveDate: "2021-04-24T20:00:00+03:00",
-    EffectiveEpochDate: 1619283600,
+    EffectiveDate: "2021-04-26T08:00:00+03:00",
+    EffectiveEpochDate: 1619413200,
     Severity: 7,
-    Text: "Mild Saturday night",
-    Category: "heat",
-    EndDate: "2021-04-25T08:00:00+03:00",
-    EndEpochDate: 1619326800,
+    Text: "Noticeably cooler Monday",
+    Category: "cooler",
+    EndDate: "2021-04-26T20:00:00+03:00",
+    EndEpochDate: 1619456400,
     MobileLink:
       "http://m.accuweather.com/en/il/tel-aviv/215854/extended-weather-forecast/215854?lang=en-us",
     Link:
@@ -14,16 +14,16 @@ export const fiveDay = {
   },
   DailyForecasts: [
     {
-      Date: "2021-04-24T07:00:00+03:00",
-      EpochDate: 1619236800,
+      Date: "2021-04-25T07:00:00+03:00",
+      EpochDate: 1619323200,
       Temperature: {
         Minimum: {
-          Value: 62,
+          Value: 66,
           Unit: "F",
           UnitType: 18,
         },
         Maximum: {
-          Value: 79,
+          Value: 81,
           Unit: "F",
           UnitType: 18,
         },
@@ -45,47 +45,16 @@ export const fiveDay = {
         "http://www.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=1&lang=en-us",
     },
     {
-      Date: "2021-04-25T07:00:00+03:00",
-      EpochDate: 1619323200,
-      Temperature: {
-        Minimum: {
-          Value: 66,
-          Unit: "F",
-          UnitType: 18,
-        },
-        Maximum: {
-          Value: 80,
-          Unit: "F",
-          UnitType: 18,
-        },
-      },
-      Day: {
-        Icon: 1,
-        IconPhrase: "Sunny",
-        HasPrecipitation: false,
-      },
-      Night: {
-        Icon: 33,
-        IconPhrase: "Clear",
-        HasPrecipitation: false,
-      },
-      Sources: ["AccuWeather"],
-      MobileLink:
-        "http://m.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=2&lang=en-us",
-      Link:
-        "http://www.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=2&lang=en-us",
-    },
-    {
       Date: "2021-04-26T07:00:00+03:00",
       EpochDate: 1619409600,
       Temperature: {
         Minimum: {
-          Value: 60,
+          Value: 61,
           Unit: "F",
           UnitType: 18,
         },
         Maximum: {
-          Value: 72,
+          Value: 71,
           Unit: "F",
           UnitType: 18,
         },
@@ -102,28 +71,59 @@ export const fiveDay = {
       },
       Sources: ["AccuWeather"],
       MobileLink:
-        "http://m.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=3&lang=en-us",
+        "http://m.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=2&lang=en-us",
       Link:
-        "http://www.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=3&lang=en-us",
+        "http://www.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=2&lang=en-us",
     },
     {
       Date: "2021-04-27T07:00:00+03:00",
       EpochDate: 1619496000,
       Temperature: {
         Minimum: {
-          Value: 59,
+          Value: 58,
           Unit: "F",
           UnitType: 18,
         },
         Maximum: {
-          Value: 73,
+          Value: 71,
           Unit: "F",
           UnitType: 18,
         },
       },
       Day: {
-        Icon: 2,
-        IconPhrase: "Mostly sunny",
+        Icon: 3,
+        IconPhrase: "Partly sunny",
+        HasPrecipitation: false,
+      },
+      Night: {
+        Icon: 33,
+        IconPhrase: "Clear",
+        HasPrecipitation: false,
+      },
+      Sources: ["AccuWeather"],
+      MobileLink:
+        "http://m.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=3&lang=en-us",
+      Link:
+        "http://www.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=3&lang=en-us",
+    },
+    {
+      Date: "2021-04-28T07:00:00+03:00",
+      EpochDate: 1619582400,
+      Temperature: {
+        Minimum: {
+          Value: 62,
+          Unit: "F",
+          UnitType: 18,
+        },
+        Maximum: {
+          Value: 77,
+          Unit: "F",
+          UnitType: 18,
+        },
+      },
+      Day: {
+        Icon: 1,
+        IconPhrase: "Sunny",
         HasPrecipitation: false,
       },
       Night: {
@@ -138,16 +138,16 @@ export const fiveDay = {
         "http://www.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=4&lang=en-us",
     },
     {
-      Date: "2021-04-28T07:00:00+03:00",
-      EpochDate: 1619582400,
+      Date: "2021-04-29T07:00:00+03:00",
+      EpochDate: 1619668800,
       Temperature: {
         Minimum: {
-          Value: 61,
+          Value: 65,
           Unit: "F",
           UnitType: 18,
         },
         Maximum: {
-          Value: 78,
+          Value: 80,
           Unit: "F",
           UnitType: 18,
         },
