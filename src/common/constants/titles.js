@@ -4,6 +4,7 @@ export const navbarTitles = {
   FAV_NAV: "Favorites",
 };
 
-export const defaultCityName = {
+export const defaultCityDetails = {
   DEFAULT_CITY_NAME: "Tel Aviv",
+  DEFAULT_CITY_ID: "215854",
 };

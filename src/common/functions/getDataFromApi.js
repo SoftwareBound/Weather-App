@@ -1,4 +1,4 @@
-export async function getCurrentCityData(url) {
+export async function getData(url) {
   const data = await fetch(url);
   const jsonData = await data.json();
 

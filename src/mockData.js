@@ -14,47 +14,16 @@ export const fiveDay = {
   },
   DailyForecasts: [
     {
-      Date: "2021-04-25T07:00:00+03:00",
-      EpochDate: 1619323200,
-      Temperature: {
-        Minimum: {
-          Value: 66,
-          Unit: "F",
-          UnitType: 18,
-        },
-        Maximum: {
-          Value: 81,
-          Unit: "F",
-          UnitType: 18,
-        },
-      },
-      Day: {
-        Icon: 1,
-        IconPhrase: "Sunny",
-        HasPrecipitation: false,
-      },
-      Night: {
-        Icon: 33,
-        IconPhrase: "Clear",
-        HasPrecipitation: false,
-      },
-      Sources: ["AccuWeather"],
-      MobileLink:
-        "http://m.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=1&lang=en-us",
-      Link:
-        "http://www.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=1&lang=en-us",
-    },
-    {
       Date: "2021-04-26T07:00:00+03:00",
       EpochDate: 1619409600,
       Temperature: {
         Minimum: {
-          Value: 61,
+          Value: 69,
           Unit: "F",
           UnitType: 18,
         },
         Maximum: {
-          Value: 71,
+          Value: 69,
           Unit: "F",
           UnitType: 18,
         },
@@ -71,16 +40,16 @@ export const fiveDay = {
       },
       Sources: ["AccuWeather"],
       MobileLink:
-        "http://m.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=2&lang=en-us",
+        "http://m.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=1&lang=en-us",
       Link:
-        "http://www.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=2&lang=en-us",
+        "http://www.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=1&lang=en-us",
     },
     {
       Date: "2021-04-27T07:00:00+03:00",
       EpochDate: 1619496000,
       Temperature: {
         Minimum: {
-          Value: 58,
+          Value: 60,
           Unit: "F",
           UnitType: 18,
         },
@@ -102,9 +71,9 @@ export const fiveDay = {
       },
       Sources: ["AccuWeather"],
       MobileLink:
-        "http://m.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=3&lang=en-us",
+        "http://m.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=2&lang=en-us",
       Link:
-        "http://www.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=3&lang=en-us",
+        "http://www.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=2&lang=en-us",
     },
     {
       Date: "2021-04-28T07:00:00+03:00",
@@ -116,7 +85,38 @@ export const fiveDay = {
           UnitType: 18,
         },
         Maximum: {
-          Value: 77,
+          Value: 75,
+          Unit: "F",
+          UnitType: 18,
+        },
+      },
+      Day: {
+        Icon: 1,
+        IconPhrase: "Sunny",
+        HasPrecipitation: false,
+      },
+      Night: {
+        Icon: 33,
+        IconPhrase: "Clear",
+        HasPrecipitation: false,
+      },
+      Sources: ["AccuWeather"],
+      MobileLink:
+        "http://m.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=3&lang=en-us",
+      Link:
+        "http://www.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=3&lang=en-us",
+    },
+    {
+      Date: "2021-04-29T07:00:00+03:00",
+      EpochDate: 1619668800,
+      Temperature: {
+        Minimum: {
+          Value: 64,
+          Unit: "F",
+          UnitType: 18,
+        },
+        Maximum: {
+          Value: 78,
           Unit: "F",
           UnitType: 18,
         },
@@ -138,11 +138,11 @@ export const fiveDay = {
         "http://www.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=4&lang=en-us",
     },
     {
-      Date: "2021-04-29T07:00:00+03:00",
-      EpochDate: 1619668800,
+      Date: "2021-04-30T07:00:00+03:00",
+      EpochDate: 1619755200,
       Temperature: {
         Minimum: {
-          Value: 65,
+          Value: 63,
           Unit: "F",
           UnitType: 18,
         },
@@ -153,8 +153,8 @@ export const fiveDay = {
         },
       },
       Day: {
-        Icon: 1,
-        IconPhrase: "Sunny",
+        Icon: 2,
+        IconPhrase: "Mostly sunny",
         HasPrecipitation: false,
       },
       Night: {
@@ -258,5 +258,158 @@ export const currentCityWeather = [
       "http://m.accuweather.com/en/il/tel-aviv/215854/current-weather/215854?lang=en-us",
     Link:
       "http://www.accuweather.com/en/il/tel-aviv/215854/current-weather/215854?lang=en-us",
+  },
+];
+
+export const autoSearchTel = [
+  {
+    Version: 1,
+    Key: "215854",
+    Type: "City",
+    Rank: 31,
+    LocalizedName: "Tel Aviv",
+    Country: {
+      ID: "IL",
+      LocalizedName: "Israel",
+    },
+    AdministrativeArea: {
+      ID: "TA",
+      LocalizedName: "Tel Aviv",
+    },
+  },
+  {
+    Version: 1,
+    Key: "3431644",
+    Type: "City",
+    Rank: 45,
+    LocalizedName: "Telanaipura",
+    Country: {
+      ID: "ID",
+      LocalizedName: "Indonesia",
+    },
+    AdministrativeArea: {
+      ID: "JA",
+      LocalizedName: "Jambi",
+    },
+  },
+  {
+    Version: 1,
+    Key: "300558",
+    Type: "City",
+    Rank: 45,
+    LocalizedName: "Telok Blangah New Town",
+    Country: {
+      ID: "SG",
+      LocalizedName: "Singapore",
+    },
+    AdministrativeArea: {
+      ID: "05",
+      LocalizedName: "South West",
+    },
+  },
+  {
+    Version: 1,
+    Key: "325876",
+    Type: "City",
+    Rank: 51,
+    LocalizedName: "Telford",
+    Country: {
+      ID: "GB",
+      LocalizedName: "United Kingdom",
+    },
+    AdministrativeArea: {
+      ID: "TFW",
+      LocalizedName: "Telford and Wrekin",
+    },
+  },
+  {
+    Version: 1,
+    Key: "169072",
+    Type: "City",
+    Rank: 51,
+    LocalizedName: "Telavi",
+    Country: {
+      ID: "GE",
+      LocalizedName: "Georgia",
+    },
+    AdministrativeArea: {
+      ID: "KA",
+      LocalizedName: "Kakheti",
+    },
+  },
+  {
+    Version: 1,
+    Key: "230611",
+    Type: "City",
+    Rank: 51,
+    LocalizedName: "Telsiai",
+    Country: {
+      ID: "LT",
+      LocalizedName: "Lithuania",
+    },
+    AdministrativeArea: {
+      ID: "TE",
+      LocalizedName: "Telšiai",
+    },
+  },
+  {
+    Version: 1,
+    Key: "2723742",
+    Type: "City",
+    Rank: 55,
+    LocalizedName: "Telégrafo",
+    Country: {
+      ID: "BR",
+      LocalizedName: "Brazil",
+    },
+    AdministrativeArea: {
+      ID: "PA",
+      LocalizedName: "Pará",
+    },
+  },
+  {
+    Version: 1,
+    Key: "186933",
+    Type: "City",
+    Rank: 55,
+    LocalizedName: "Tela",
+    Country: {
+      ID: "HN",
+      LocalizedName: "Honduras",
+    },
+    AdministrativeArea: {
+      ID: "AT",
+      LocalizedName: "Atlántida",
+    },
+  },
+  {
+    Version: 1,
+    Key: "3453754",
+    Type: "City",
+    Rank: 55,
+    LocalizedName: "Telaga Asih",
+    Country: {
+      ID: "ID",
+      LocalizedName: "Indonesia",
+    },
+    AdministrativeArea: {
+      ID: "JB",
+      LocalizedName: "West Java",
+    },
+  },
+  {
+    Version: 1,
+    Key: "3453755",
+    Type: "City",
+    Rank: 55,
+    LocalizedName: "Telagamurni",
+    Country: {
+      ID: "ID",
+      LocalizedName: "Indonesia",
+    },
+    AdministrativeArea: {
+      ID: "JB",
+      LocalizedName: "West Java",
+    },
   },
 ];

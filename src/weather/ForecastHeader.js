@@ -26,7 +26,7 @@ const ForecastHeader = ({ currentCityData }) => {
         className="col-4 currentForecastData"
         style={{ marginRight: "10px", marginLeft: "10px" }}
       >
-        <div> {currentCityData.cityName}</div>
+        <div> {currentCityData.cityDetails.name}</div>
         {` ${currentCityData.currentWeather.Temperature.Metric.Value} ${currentCityData.currentWeather.Temperature.Metric.Unit}`}
       </div>
       <div className="col-5" style={{ textAlign: "right" }}>
