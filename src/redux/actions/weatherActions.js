@@ -1,5 +1,7 @@
-import { searchActions } from "../common/constants/actionType";
-import { getData } from "../common/functions/getDataFromApi";
+import {
+  searchActions,
+  weatherActions,
+} from "../../common/constants/actionType";
 
 export function setSelectedCityData(key, name) {
   return {

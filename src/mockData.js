@@ -259,6 +259,31 @@ export const currentCityWeather = [
     Link:
       "http://www.accuweather.com/en/il/tel-aviv/215854/current-weather/215854?lang=en-us",
   },
+  {
+    LocalObservationDateTime: "2021-04-27T10:26:00+03:00",
+    EpochTime: 1619508360,
+    WeatherText: "Cloudy",
+    WeatherIcon: 7,
+    HasPrecipitation: false,
+    PrecipitationType: null,
+    IsDayTime: true,
+    Temperature: {
+      Metric: {
+        Value: 3.7,
+        Unit: "C",
+        UnitType: 17,
+      },
+      Imperial: {
+        Value: 39,
+        Unit: "F",
+        UnitType: 18,
+      },
+    },
+    MobileLink:
+      "http://m.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us",
+    Link:
+      "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us",
+  },
 ];
 
 export const autoSearchTel = [

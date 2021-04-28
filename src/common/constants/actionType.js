@@ -6,3 +6,8 @@ export const weatherActions = {
 export const searchActions = {
   SET_SELECTED_CITY_FROM_SEARCH: "SET_SELECTED_CITY_FROM_SEARCH",
 };
+
+export const favoritesActions = {
+  ADD_CITY_TO_FAVORITES: "ADD_CITY_TO_FAVORITES",
+  REMOVE_CITY_FROM_FAVORITES: "REMOVE_CITY_FROM_FAVORITES",
+};

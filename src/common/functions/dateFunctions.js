@@ -50,3 +50,12 @@ export function getFormatedMonth(month) {
       return;
   }
 }
+
+export function parseDate(date) {
+  const newDate = new Date(date);
+  const dayText = getFormatedDayText(newDate.getDay());
+  const dateArr = ` ${newDate.getDate()}/${getFormatedMonth(
+    newDate.getMonth()
+  )}`;
+  return [dayText, dateArr];
+}

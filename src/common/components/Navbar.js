@@ -1,7 +1,7 @@
 import React from "react";
 import { navbarTitles } from "../constants/titles";
 import { iconsList } from "../constants/icons";
-
+import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div>
@@ -19,16 +19,16 @@ const Navbar = () => {
             style={{ marginInlineStart: "auto", paddingInlineEnd: "50px" }}
           >
             <li className="nav-item active">
-              <a className="nav-link" href="/">
+              <Link className="nav-link" to="/">
                 <span> {navbarTitles.HOME_NAV}</span>
                 <span> {iconsList.HOUSE_ICON}</span>
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/favorites">
+              <Link className="nav-link" to="/favorites">
                 <span> {navbarTitles.FAV_NAV}</span>
                 <span> {iconsList.FAV_ICON}</span>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

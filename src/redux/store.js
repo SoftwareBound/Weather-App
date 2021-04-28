@@ -1,4 +1,5 @@
 import { createStore } from "redux";
-import { weatherReducer } from "./reducers";
 
-export const store = createStore(weatherReducer);
+import rootReducer from "./reducers/index";
+
+export const store = createStore(rootReducer);
