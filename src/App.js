@@ -13,7 +13,7 @@ function App() {
           <Navbar />
           <div className="container">
             <Switch>
-              <Route exact path="/">
+              <Route exact path="/ron-benzvi-25-04-21">
                 <div
                   className="row search"
                   style={{
