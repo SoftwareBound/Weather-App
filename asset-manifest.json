@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/ron-benzvi-25-04-21/static/js/main.cae1b4d6.chunk.js",
-    "main.js.map": "/ron-benzvi-25-04-21/static/js/main.cae1b4d6.chunk.js.map",
-    "runtime-main.js": "/ron-benzvi-25-04-21/static/js/runtime-main.7935ae3b.js",
-    "runtime-main.js.map": "/ron-benzvi-25-04-21/static/js/runtime-main.7935ae3b.js.map",
-    "static/js/2.967fb3fa.chunk.js": "/ron-benzvi-25-04-21/static/js/2.967fb3fa.chunk.js",
-    "static/js/2.967fb3fa.chunk.js.map": "/ron-benzvi-25-04-21/static/js/2.967fb3fa.chunk.js.map",
+    "main.js": "/ron-benzvi-25-04-21/static/js/main.310df1b2.chunk.js",
+    "main.js.map": "/ron-benzvi-25-04-21/static/js/main.310df1b2.chunk.js.map",
+    "runtime-main.js": "/ron-benzvi-25-04-21/static/js/runtime-main.11d75ec0.js",
+    "runtime-main.js.map": "/ron-benzvi-25-04-21/static/js/runtime-main.11d75ec0.js.map",
+    "static/js/2.b1a8fa2d.chunk.js": "/ron-benzvi-25-04-21/static/js/2.b1a8fa2d.chunk.js",
+    "static/js/2.b1a8fa2d.chunk.js.map": "/ron-benzvi-25-04-21/static/js/2.b1a8fa2d.chunk.js.map",
     "index.html": "/ron-benzvi-25-04-21/index.html",
-    "static/js/2.967fb3fa.chunk.js.LICENSE.txt": "/ron-benzvi-25-04-21/static/js/2.967fb3fa.chunk.js.LICENSE.txt"
+    "static/js/2.b1a8fa2d.chunk.js.LICENSE.txt": "/ron-benzvi-25-04-21/static/js/2.b1a8fa2d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.7935ae3b.js",
-    "static/js/2.967fb3fa.chunk.js",
-    "static/js/main.cae1b4d6.chunk.js"
+    "static/js/runtime-main.11d75ec0.js",
+    "static/js/2.b1a8fa2d.chunk.js",
+    "static/js/main.310df1b2.chunk.js"
   ]
 }
