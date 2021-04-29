@@ -19,7 +19,7 @@ const Navbar = () => {
             style={{ marginInlineStart: "auto", paddingInlineEnd: "50px" }}
           >
             <li className="nav-item active">
-              <Link className="nav-link" to="/">
+              <Link className="nav-link" to="/ron-benzvi-25-04-21">
                 <span> {navbarTitles.HOME_NAV}</span>
                 <span> {iconsList.HOUSE_ICON}</span>
               </Link>
