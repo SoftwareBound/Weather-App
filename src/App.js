@@ -37,7 +37,7 @@ function App() {
                   <ForecastContainer />
                 </div>
               </Route>
-              <Route path="/favorites">
+              <Route path="/ron-benzvi-25-04-21/favorites">
                 <Favorites />
               </Route>
             </Switch>
