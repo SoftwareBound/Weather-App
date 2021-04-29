@@ -13,9 +13,6 @@ function App() {
           <Navbar />
           <div className="container">
             <Switch>
-              <Route path="/favorites">
-                <Favorites />
-              </Route>
               <Route exact path="/">
                 <div
                   className="row search"
@@ -39,6 +36,9 @@ function App() {
                 >
                   <ForecastContainer />
                 </div>
+              </Route>
+              <Route path="/favorites">
+                <Favorites />
               </Route>
             </Switch>
           </div>
