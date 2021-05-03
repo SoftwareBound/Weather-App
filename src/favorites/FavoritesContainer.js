@@ -1,12 +1,12 @@
 import React from "react";
-import { connect } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import FavoriteItem from "./FavoriteItem";
-import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { loadCurrentCityWeather } from "../redux/actions/weatherActions";
 import "./style.css";
-const FavoritesContainer = ({ favorites }) => {
+const FavoritesContainer = () => {
   const dispatch = useDispatch();
+  const favorites = useSelector((state) => state.favoritesReducer);
   const setFavouriteCity = (city) => {
     dispatch(loadCurrentCityWeather(city.id, city.name));
   };
@@ -27,9 +27,5 @@ const FavoritesContainer = ({ favorites }) => {
     </div>
   );
 };
-const mapStateToProps = (state) => {
-  return {
-    favorites: state.favoritesReducer,
-  };
-};
-export default connect(mapStateToProps)(FavoritesContainer);
+
+export default FavoritesContainer;

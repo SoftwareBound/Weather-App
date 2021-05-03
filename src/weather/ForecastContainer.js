@@ -1,14 +1,15 @@
 import React, { useEffect } from "react";
 import ForecastHeader from "./ForecastHeader";
-import { connect } from "react-redux";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { defaultCityDetails } from "../common/constants/titles";
 import { loadCurrentCityWeather } from "../redux/actions/weatherActions";
 import "./style.css";
 import ForecastItem from "./ForecastItem";
 
-const ForecastContainer = ({ currentCity, favouriteList }) => {
+const ForecastContainer = () => {
   const dispatch = useDispatch();
+  const currentCity = useSelector((state) => state.weatherReducer);
+  const favouriteList = useSelector((state) => state.favoritesReducer);
 
   useEffect(() => {
     if (!Object.values(currentCity).length) {
@@ -57,11 +58,5 @@ const ForecastContainer = ({ currentCity, favouriteList }) => {
     </div>
   );
 };
-const mapStateToProps = (state) => {
-  return {
-    currentCity: state.weatherReducer,
-    favouriteList: state.favoritesReducer,
-  };
-};
 
-export default connect(mapStateToProps)(ForecastContainer);
+export default ForecastContainer;
