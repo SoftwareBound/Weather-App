@@ -1,0 +1,103 @@
+.navbar {
+  background-color: #e3f2fd;
+}
+.nav-container {
+  height: 4em;
+}
+
+.navbar-brand {
+  margin-left: 0.5em;
+  position: relative;
+  font-size: x-large;
+}
+
+.navbar-nav {
+  margin-inline-start: auto;
+  padding-inline-end: 50px;
+}
+.home-icon {
+  display: none;
+}
+.fav-icon {
+  display: none;
+}
+.home-text {
+  border: outset;
+  border-color: lightblue;
+  padding: 0.1em;
+  border-radius: 10px;
+  border-width: 0.2em;
+  color: black;
+  font-size: x-large;
+}
+
+.fav-text {
+  border: outset;
+  border-color: lightblue;
+  padding: 0.1em;
+  border-radius: 10px;
+  border-width: 0.2em;
+  color: black;
+  font-size: x-large;
+}
+
+.fav-text:hover {
+  background-color: lightblue;
+}
+
+.home-text:hover {
+  background-color: lightblue;
+}
+
+@media only screen and (max-width: 520px) {
+  .home-icon {
+    display: flex;
+    border: outset;
+    border-color: lightblue;
+    padding: 1vh;
+    border-radius: 10px;
+    border-width: 1vw;
+    color: black;
+    justify-content: center;
+    width: 2.5em;
+    height: 2.5em;
+  }
+  .fav-icon {
+    justify-content: center;
+    display: inline-flex;
+    border: outset;
+    border-color: lightblue;
+    padding: 1vh;
+    border-radius: 10px;
+    border-width: 1vw;
+    color: black;
+    margin: auto;
+    width: 2.5em;
+    height: 2.5em;
+  }
+
+  .home-icon:hover {
+    background-color: lightblue;
+  }
+  .fav-icon:hover {
+    background-color: lightblue;
+  }
+  .home-text {
+    display: none;
+  }
+
+  .fav-text {
+    display: none;
+  }
+  .navbar-nav {
+    margin-inline-start: auto;
+    padding-inline-end: 50px;
+  }
+  .nav-list {
+    flex-direction: row;
+  }
+  .navbar-brand {
+    margin-left: 0.5em;
+    font-size: 1.3em;
+  }
+}

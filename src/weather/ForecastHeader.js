@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { setWeatherImage } from "../common/functions/imageFunctions";
 import { iconUrls } from "../common/constants/urls";
 import { iconsList } from "../common/constants/icons";
-
+import "./style.css";
 import {
   addFavouriteCity,
   removeFavouriteCity,
@@ -39,25 +39,22 @@ const ForecastHeader = ({ currentCityData, favouriteList }) => {
   };
 
   return (
-    <div className="row">
-      <div className="col-1">
+    <div className="row header-forecast">
+      <div className="col-1 ">
         <img
           src={`${iconUrls.WEATHER_URL_PREFIX}${setWeatherImage(
             currentCityData.currentWeather.WeatherIcon
           )}${iconUrls.WEATHER_URL_SUFFIX}`}
           alt={currentCityData.currentWeather.WeatherText}
-          style={{ marginRight: "20px", border: "outset" }}
+          id="current-weather-icon"
         />
       </div>
-      <div
-        className="col-4 currentForecastData"
-        style={{ marginRight: "10px", marginLeft: "10px" }}
-      >
+      <div className="col-4 current-weather-details">
         <div> {currentCityData.cityDetails.name}</div>
         {` ${currentCityData.currentWeather.Temperature.Metric.Value} ${currentCityData.currentWeather.Temperature.Metric.Unit}`}
       </div>
-      <div className="col-5" style={{ textAlign: "right" }}>
-        <span onClick={handleFavoritesRequest} style={{ paddingLeft: "100%" }}>
+      <div className="col-5 fav-icon-container">
+        <span className="fav-icon-header" onClick={handleFavoritesRequest}>
           {isCityinFavouritesList()
             ? iconsList.HEART_ICON_FAV
             : iconsList.HEART_ICON}

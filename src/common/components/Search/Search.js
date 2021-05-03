@@ -1,13 +1,13 @@
-import { iconsList } from "../constants/icons";
+import { iconsList } from "../../constants/icons";
 import React, { useEffect, useState } from "react";
 import { useDebounce } from "use-debounce";
-import { autoSearchTel } from "../../mockData";
+import "./style.css";
 import Dropdown from "react-bootstrap/Dropdown";
-import { getData } from "../functions/getDataFromApi";
-import { searchUrls, apiKeyUrls, weatherUrls } from "../constants/urls";
+import { getData } from "../../functions/getDataFromApi";
+import { searchUrls, apiKeyUrls, weatherUrls } from "../../constants/urls";
 import { useDispatch } from "react-redux";
-import { setSelectedCityData } from "../../redux/actions/weatherActions";
-import { weatherActions } from "../constants/actionType";
+import { setSelectedCityData } from "../../../redux/actions/weatherActions";
+import { weatherActions } from "../../constants/actionType";
 
 const Search = () => {
   const [text, setText] = useState("");
@@ -59,28 +59,21 @@ const Search = () => {
     setText(name);
   };
   return (
-    <div style={{ position: "relative" }}>
+    <div className="search-container">
       <Dropdown>
         <Dropdown.Toggle
           variant="primary"
           id="dropdown-basic"
-          style={{ width: "400px", backgroundColor: "#e3f2fd" }}
           aria-expanded="true"
         >
           <input
             type="text"
             placeholder="Start typing city name"
             onChange={(e) => setText(e.target.value)}
-            style={{ float: "left", minWidth: "98%" }}
             value={value}
+            className="search-input"
           />
-          <span
-            style={{
-              position: "absolute",
-              right: "30px",
-              color: "black",
-            }}
-          >
+          <span className="search-icon">
             {text.length === 0 ? (
               <span>{iconsList.SEARCH_ICON}</span>
             ) : (

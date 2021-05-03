@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 import { getData } from "../common/functions/getDataFromApi";
 import { apiKeyUrls } from "../common/constants/urls";
 import { Link } from "react-router-dom";
-
+import "./style.css";
 const FavoritesContainer = ({ favorites }) => {
   const dispatch = useDispatch();
   const setFavouriteCity = (city) => {
@@ -38,20 +38,14 @@ const FavoritesContainer = ({ favorites }) => {
   };
 
   return (
-    <div className="row" style={{ marginTop: "5%" }}>
+    <div className="row favourite-container">
       {favorites.map((city) => (
         <div
-          className="col-1"
+          className="col-1 city-item-container"
           key={city.id}
-          style={{ borderStyle: "ridge", margin: "5%" }}
           onClick={() => setFavouriteCity(city)}
         >
-          <Link
-            to="/"
-            style={{
-              textDecorationLine: "none",
-            }}
-          >
+          <Link to="/" className="link-item">
             <FavoriteItem data={city} />
           </Link>
         </div>

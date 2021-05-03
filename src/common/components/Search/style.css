@@ -1,0 +1,19 @@
+.search-container {
+  position: "relative";
+}
+
+#dropdown-basic {
+  width: 400px;
+  background-color: #e3f2fd;
+}
+
+.search-input {
+  float: left;
+  min-width: 98%;
+}
+
+.search-icon {
+  position: absolute;
+  right: 30px;
+  color: grey;
+}

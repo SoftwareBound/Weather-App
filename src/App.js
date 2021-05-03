@@ -1,5 +1,5 @@
-import Navbar from "./common/components/Navbar";
-import Search from "./common/components/Search";
+import Navbar from "./common/components/Navbar/Navbar";
+import Search from "./common/components/Search/Search";
 import ForecastContainer from "./weather/ForecastContainer";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
@@ -13,7 +13,7 @@ function App() {
           <Navbar />
           <div className="container">
             <Switch>
-              <Route exact path="/ron-benzvi-25-04-21">
+              <Route exact path="/">
                 <div
                   className="row search"
                   style={{
@@ -25,7 +25,7 @@ function App() {
                   <Search />
                 </div>
                 <div
-                  className="row forecast-container"
+                  className="row forecast-container container"
                   style={{
                     margin: "auto",
                     width: "90%",
@@ -34,10 +34,10 @@ function App() {
                     border: "solid",
                   }}
                 >
-                  <ForecastContainer />
+                  {<ForecastContainer />}
                 </div>
               </Route>
-              <Route path="/ron-benzvi-25-04-21/favorites">
+              <Route path="/favorites">
                 <Favorites />
               </Route>
             </Switch>

@@ -1,0 +1,40 @@
+.forecast-cotainer {
+  margin-top: 1em;
+}
+
+.weather-text {
+  justify-content: center;
+  margin-top: 5%;
+  font-size: xx-large;
+  margin-block-end: 3em;
+}
+
+.forecast-container {
+  text-align: center;
+  margin: auto;
+}
+
+.forecast-item-container {
+  border: ridge;
+  margin-right: 10px;
+}
+
+#current-weather-icon {
+  margin-right: 20px;
+  border: outset;
+}
+
+.current-weather-details {
+  text-align: initial;
+  padding-left: 1.5em;
+}
+
+.fav-icon-container {
+  text-align: right;
+}
+.fav-icon-header {
+  padding-left: 100%;
+}
+
+@media only screen and (max-width: 520px) {
+}

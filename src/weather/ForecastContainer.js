@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import ForecastHeader from "./ForecastHeader";
-import { currentCityData, currentCityWeather, fiveDay } from "../mockData";
 import { connect } from "react-redux";
 import { getData } from "../common/functions/getDataFromApi";
 import { useDispatch } from "react-redux";
@@ -10,6 +9,7 @@ import { weatherUrls, apiKeyUrls } from "../common/constants/urls";
 import { errorMessage } from "../common/constants/titles";
 import { getCityWeather } from "../redux/actions/weatherActions";
 import { iconUrls } from "../common/constants/urls";
+import "./style.css";
 
 import ForecastItem from "./ForecastItem";
 
@@ -55,7 +55,7 @@ const ForecastContainer = ({ currentCity, favouriteList }) => {
 
   if (Object.values(currentCity).length < 3) {
     return (
-      <div class="d-flex align-items-center">
+      <div className="d-flex align-items-center">
         <strong>Loading...</strong>
         <div
           className="spinner-border ms-auto"
@@ -67,38 +67,20 @@ const ForecastContainer = ({ currentCity, favouriteList }) => {
   }
 
   return (
-    <div className="container">
-      <div className="row" style={{ marginTop: "3%" }}>
+    <div className="container forecast-cotainer">
+      <div className="row">
         <ForecastHeader
           currentCityData={currentCity}
           favouriteList={favouriteList}
         />
       </div>
-      <div
-        className="row"
-        style={{
-          justifyContent: "center",
-          marginTop: "5%",
-          fontSize: "xx-large",
-        }}
-      >
+      <div className="row weather-text">
         {currentCity.currentWeather.WeatherText}
       </div>
-      <div
-        className="row"
-        style={{
-          textAlign: "center",
-          margin: "auto",
-          paddingBlockStart: "7%",
-        }}
-      >
+      <div className="row forecast-container">
         {currentCity.forecast.DailyForecasts.map((day) => {
           return (
-            <div
-              key={day.Date}
-              className="col"
-              style={{ border: "ridge", marginRight: "10px" }}
-            >
+            <div key={day.Date} className="col forecast-item-container">
               <ForecastItem data={day} />
             </div>
           );

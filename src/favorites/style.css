@@ -1,0 +1,19 @@
+.link-item {
+  text-decoration: none;
+}
+
+.favourite-container {
+  margin-top: 5%;
+}
+
+.city-item-container {
+  border-style: ridge;
+  margin: 5%;
+  width: fit-content;
+}
+
+.city-item {
+  text-align: center;
+  display: inline-block;
+  color: black;
+}
