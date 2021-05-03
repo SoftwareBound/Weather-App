@@ -11,7 +11,6 @@ export function weatherReducer(state = {}, action) {
 
     case weatherActions.LOAD_CITY_WEATHER_FORECAST:
       return { ...state, forecast: action.payload };
-
     default:
       return state;
   }

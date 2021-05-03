@@ -7,7 +7,8 @@ import { getData } from "../../functions/getDataFromApi";
 import { searchUrls, apiKeyUrls, weatherUrls } from "../../constants/urls";
 import { useDispatch } from "react-redux";
 import { setSelectedCityData } from "../../../redux/actions/weatherActions";
-import { weatherActions } from "../../constants/actionType";
+
+import { loadCurrentCityWeather } from "../../../redux/actions/weatherActions";
 
 const Search = () => {
   const [text, setText] = useState("");
@@ -23,39 +24,19 @@ const Search = () => {
     }
 
     if (value.length) {
-      getData(
-        `${searchUrls.AUTO_COMPLETE_CITY_SEARCH}${apiKeyUrls.APIKEY_URL}&q=${value}`
-      ).then((res) => setCityArr(res));
+      (async function () {
+        const dataFromSearch = await getData(
+          `${searchUrls.AUTO_COMPLETE_CITY_SEARCH}${apiKeyUrls.APIKEY_URL}&q=${value}`
+        );
+        setCityArr(dataFromSearch);
+      })();
     } else {
       setSelectedCityData([]);
     }
   }, [value]);
 
   const setSearchedData = (key, name) => {
-    getData(
-      `${weatherUrls.CITY_CURRENT_WEATHER}${key}${apiKeyUrls.APIKEY_URL}`
-    ).then(function (weather) {
-      dispatch({
-        type: weatherActions.LOAD_CITY_WEATHER,
-        payload: {
-          cityDetails: {
-            name: name,
-            id: key,
-          },
-          currentWeather: weather[0],
-        },
-      });
-      getData(
-        `${weatherUrls.CITY_FIVE_DAY_FORECAST}${key}${apiKeyUrls.APIKEY_URL}`
-      )
-        .then((res) =>
-          dispatch({
-            type: weatherActions.LOAD_CITY_WEATHER_FORECAST,
-            payload: res,
-          })
-        )
-        .catch((error) => alert(`forecast fetch error ${error}`));
-    });
+    dispatch(loadCurrentCityWeather(key, name));
     setText(name);
   };
   return (
