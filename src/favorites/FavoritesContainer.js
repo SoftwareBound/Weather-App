@@ -8,11 +8,18 @@ const FavoritesContainer = () => {
   const dispatch = useDispatch();
   const favorites = useSelector((state) => state.favoritesReducer);
   const setFavouriteCity = (city) => {
-    dispatch(loadCurrentCityWeather(city.id, city.name));
+    dispatch(loadCurrentCityWeather(city.id, city.name, city.country));
   };
 
   return (
     <div className="row favourite-container">
+      <button
+        onClick={() => {
+          console.log(favorites);
+        }}
+      >
+        Button
+      </button>
       {favorites.map((city) => (
         <div
           className="col-1 city-item-container"

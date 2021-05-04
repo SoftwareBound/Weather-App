@@ -41,6 +41,13 @@ const ForecastHeader = ({ currentCityData, favouriteList }) => {
   return (
     <div className="row header-forecast">
       <div className="col-1 ">
+        <button
+          onClick={() => {
+            console.log(currentCityData);
+          }}
+        >
+          Current city data
+        </button>
         <img
           src={`${iconUrls.WEATHER_URL_PREFIX}${setWeatherImage(
             currentCityData.currentWeather.WeatherIcon
@@ -50,7 +57,7 @@ const ForecastHeader = ({ currentCityData, favouriteList }) => {
         />
       </div>
       <div className="col-4 current-weather-details">
-        <div> {currentCityData.cityDetails.name}</div>
+        <div>{`${currentCityData.cityDetails.name}, ${currentCityData.cityDetails.country}`}</div>
         {` ${currentCityData.currentWeather.Temperature.Metric.Value} ${currentCityData.currentWeather.Temperature.Metric.Unit}`}
       </div>
       <div className="col-5 fav-icon-container">

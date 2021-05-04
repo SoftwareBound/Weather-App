@@ -12,13 +12,14 @@ export function setSelectedCityData(key, name) {
     payload: { name, key },
   };
 }
-export function loadCityWeather(id, name, data) {
+export function loadCityWeather(id, name, country, data) {
   return {
     type: weatherActions.LOAD_CITY_WEATHER,
     payload: {
       cityDetails: {
         name: name,
         id: id,
+        country: country,
       },
       currentWeather: data,
     },
@@ -31,12 +32,13 @@ export function loadCityForecast(data) {
   };
 }
 
-export function loadCurrentCityWeather(id, name) {
+export function loadCurrentCityWeather(id, name, country) {
   return async function (dispatch) {
     const currentCityWeather = await getData(
       `${weatherUrls.CITY_CURRENT_WEATHER}${id}${apiKeyUrls.APIKEY_URL}`
     );
-    dispatch(loadCityWeather(id, name, currentCityWeather[0]));
+
+    dispatch(loadCityWeather(id, name, country, currentCityWeather[0]));
     const currentCityForecast = await getData(
       `${weatherUrls.CITY_FIVE_DAY_FORECAST}${id}${apiKeyUrls.APIKEY_URL}`
     );

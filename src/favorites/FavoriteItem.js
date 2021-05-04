@@ -7,6 +7,7 @@ const FavoriteItem = ({ data }) => {
   return (
     <div className="col city-item">
       <div>{data.name}</div>
+      <div>{data.country}</div>
       <div>
         {data.currentWeather.Temperature.Metric.Value}{" "}
         {data.currentWeather.Temperature.Metric.Unit}

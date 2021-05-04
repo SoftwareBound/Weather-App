@@ -28,16 +28,24 @@ const Search = () => {
         const dataFromSearch = await getData(
           `${searchUrls.AUTO_COMPLETE_CITY_SEARCH}${apiKeyUrls.APIKEY_URL}&q=${value}`
         );
+
         setCityArr(dataFromSearch);
       })();
     } else {
       setSelectedCityData([]);
     }
+    console.log(cityArr);
   }, [value]);
 
-  const setSearchedData = (key, name) => {
-    dispatch(loadCurrentCityWeather(key, name));
+  const setSearchedData = (key, name, country) => {
+    dispatch(loadCurrentCityWeather(key, name, country));
     setText(name);
+    setSelectedCityData([]);
+  };
+  const checkStateorCountry = (city) => {
+    return city.LocalizedName === city.AdministrativeArea.LocalizedName
+      ? city.Country.LocalizedName
+      : city.AdministrativeArea.LocalizedName;
   };
   return (
     <div className="search-container">
@@ -68,9 +76,15 @@ const Search = () => {
             {cityArr.map((city) => (
               <Dropdown.Item
                 key={city.Key}
-                onClick={() => setSearchedData(city.Key, city.LocalizedName)}
+                onClick={() =>
+                  setSearchedData(
+                    city.Key,
+                    city.LocalizedName,
+                    city.Country.LocalizedName
+                  )
+                }
               >
-                {city.LocalizedName}
+                {` ${city.LocalizedName}, ${city.Country.LocalizedName}`}
               </Dropdown.Item>
             ))}
           </Dropdown.Menu>

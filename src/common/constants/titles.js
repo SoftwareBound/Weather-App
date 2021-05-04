@@ -7,6 +7,7 @@ export const navbarTitles = {
 export const defaultCityDetails = {
   DEFAULT_CITY_NAME: "Tel Aviv",
   DEFAULT_CITY_ID: "215854",
+  DEFAULT_CITY_COUNTRY: "Israel",
 };
 
 export const errorMessage = {

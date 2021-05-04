@@ -6,6 +6,7 @@ export function addFavouriteCity(city) {
     payload: {
       id: city.cityDetails.id,
       name: city.cityDetails.name,
+      country: city.cityDetails.country,
       currentWeather: city.currentWeather,
     },
   };

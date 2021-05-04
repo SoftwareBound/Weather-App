@@ -16,7 +16,8 @@ const ForecastContainer = () => {
       dispatch(
         loadCurrentCityWeather(
           defaultCityDetails.DEFAULT_CITY_ID,
-          defaultCityDetails.DEFAULT_CITY_NAME
+          defaultCityDetails.DEFAULT_CITY_NAME,
+          defaultCityDetails.DEFAULT_CITY_COUNTRY
         )
       );
     }
