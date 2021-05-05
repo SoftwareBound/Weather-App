@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Favorites from "./favorites/FavoritesContainer";
+import TestComponent from "./TestComponent";
 function App() {
   return (
     <>

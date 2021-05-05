@@ -5,21 +5,55 @@ import { defaultCityDetails } from "../common/constants/titles";
 import { loadCurrentCityWeather } from "../redux/actions/weatherActions";
 import "./style.css";
 import ForecastItem from "./ForecastItem";
+import { getData } from "../common/functions/getDataFromApi";
+import { searchUrls } from "../common/constants/urls";
 
 const ForecastContainer = () => {
   const dispatch = useDispatch();
   const currentCity = useSelector((state) => state.weatherReducer);
   const favouriteList = useSelector((state) => state.favoritesReducer);
+  async function geopoistionLocationSuccess(poistion) {
+    const currentPositionWeatherData = await getData(
+      `${searchUrls.COORDINATES_CITY_SEARCH}${poistion.coords.latitude}%2C${poistion.coords.longitude}`
+    );
+    dispatch(
+      loadCurrentCityWeather(
+        currentPositionWeatherData.Key,
+        currentPositionWeatherData.EnglishName,
+        currentPositionWeatherData.Country.EnglishName
+      )
+    );
+    console.log(currentPositionWeatherData);
+  }
+
+  function geopoistionLocationError(error) {
+    alert(`Error code ${error.code}:${"\n"}${error.message}`);
+    dispatch(
+      loadCurrentCityWeather(
+        defaultCityDetails.DEFAULT_CITY_ID,
+        defaultCityDetails.DEFAULT_CITY_NAME,
+        defaultCityDetails.DEFAULT_CITY_COUNTRY
+      )
+    );
+  }
 
   useEffect(() => {
     if (!Object.values(currentCity).length) {
-      dispatch(
-        loadCurrentCityWeather(
-          defaultCityDetails.DEFAULT_CITY_ID,
-          defaultCityDetails.DEFAULT_CITY_NAME,
-          defaultCityDetails.DEFAULT_CITY_COUNTRY
-        )
-      );
+      if (!navigator.geolocation) {
+        alert(`Your browser don't support geolocation `);
+        dispatch(
+          loadCurrentCityWeather(
+            defaultCityDetails.DEFAULT_CITY_ID,
+            defaultCityDetails.DEFAULT_CITY_NAME,
+            defaultCityDetails.DEFAULT_CITY_COUNTRY
+          )
+        );
+      } else {
+        navigator.geolocation.getCurrentPosition(
+          geopoistionLocationSuccess,
+          geopoistionLocationError
+        );
+      }
     }
   }, [currentCity]);
 

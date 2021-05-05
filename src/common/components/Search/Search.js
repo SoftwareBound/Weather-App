@@ -34,7 +34,6 @@ const Search = () => {
     } else {
       setSelectedCityData([]);
     }
-    console.log(cityArr);
   }, [value]);
 
   const setSearchedData = (key, name, country) => {

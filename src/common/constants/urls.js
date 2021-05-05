@@ -15,4 +15,5 @@ export const apiKeyUrls = {
 };
 export const searchUrls = {
   AUTO_COMPLETE_CITY_SEARCH: `https://dataservice.accuweather.com/locations/v1/cities/autocomplete`,
+  COORDINATES_CITY_SEARCH: `http://dataservice.accuweather.com/locations/v1/cities/geoposition/search${apiKeyUrls.APIKEY_URL}&q=`,
 };
