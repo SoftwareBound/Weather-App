@@ -1,14 +1,5 @@
-.navbar {
-  background-color: #e3f2fd;
-}
 .nav-container {
   height: 4em;
-}
-
-.navbar-brand {
-  margin-left: 0.5em;
-  position: relative;
-  font-size: x-large;
 }
 
 .navbar-nav {
@@ -20,33 +11,6 @@
 }
 .fav-icon {
   display: none;
-}
-.home-text {
-  border: outset;
-  border-color: lightblue;
-  padding: 0.1em;
-  border-radius: 10px;
-  border-width: 0.2em;
-  color: black;
-  font-size: x-large;
-}
-
-.fav-text {
-  border: outset;
-  border-color: lightblue;
-  padding: 0.1em;
-  border-radius: 10px;
-  border-width: 0.2em;
-  color: black;
-  font-size: x-large;
-}
-
-.fav-text:hover {
-  background-color: lightblue;
-}
-
-.home-text:hover {
-  background-color: lightblue;
 }
 
 @media only screen and (max-width: 520px) {

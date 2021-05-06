@@ -2,6 +2,11 @@ import { iconsList } from "../../constants/icons";
 import React, { useEffect, useState } from "react";
 import { useDebounce } from "use-debounce";
 import "./style.css";
+import {
+  SearchBox,
+  SearchBoxInput,
+  SearchBoxInputIcons,
+} from "../../../global";
 import Dropdown from "react-bootstrap/Dropdown";
 import { getData } from "../../functions/getDataFromApi";
 import { searchUrls, apiKeyUrls, weatherUrls } from "../../constants/urls";
@@ -49,26 +54,28 @@ const Search = () => {
   return (
     <div className="search-container">
       <Dropdown>
-        <Dropdown.Toggle
-          variant="primary"
-          id="dropdown-basic"
-          aria-expanded="true"
-        >
-          <input
-            type="text"
-            placeholder="Start typing city name"
-            onChange={(e) => setText(e.target.value)}
-            value={value}
-            className="search-input"
-          />
-          <span className="search-icon">
-            {text.length === 0 ? (
-              <span>{iconsList.SEARCH_ICON}</span>
-            ) : (
-              <span onClick={() => setText("")}>{iconsList.X_ICON}</span>
-            )}
-          </span>
-        </Dropdown.Toggle>
+        <SearchBox>
+          <Dropdown.Toggle
+            variant="primary"
+            id="dropdown-basic"
+            aria-expanded="true"
+          >
+            <SearchBoxInput
+              type="text"
+              placeholder="Start typing city name"
+              onChange={(e) => setText(e.target.value)}
+              value={value}
+              className="search-input"
+            />
+            <SearchBoxInputIcons>
+              {text.length === 0 ? (
+                <span>{iconsList.SEARCH_ICON}</span>
+              ) : (
+                <span onClick={() => setText("")}>{iconsList.X_ICON}</span>
+              )}
+            </SearchBoxInputIcons>
+          </Dropdown.Toggle>
+        </SearchBox>
 
         {text.length > 0 ? (
           <Dropdown.Menu>

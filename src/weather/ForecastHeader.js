@@ -4,6 +4,7 @@ import { setWeatherImage } from "../common/functions/imageFunctions";
 import { iconUrls } from "../common/constants/urls";
 import { iconsList } from "../common/constants/icons";
 import "./style.css";
+
 import {
   addFavouriteCity,
   removeFavouriteCity,
@@ -39,7 +40,7 @@ const ForecastHeader = ({ currentCityData, favouriteList }) => {
   };
 
   return (
-    <div className="row header-forecast">
+    <div className="row header-forecast ">
       <div className="col-1 ">
         <img
           src={`${iconUrls.WEATHER_URL_PREFIX}${setWeatherImage(

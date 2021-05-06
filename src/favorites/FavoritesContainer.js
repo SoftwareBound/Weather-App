@@ -13,13 +13,6 @@ const FavoritesContainer = () => {
 
   return (
     <div className="row favourite-container">
-      <button
-        onClick={() => {
-          console.log(favorites);
-        }}
-      >
-        Button
-      </button>
       {favorites.map((city) => (
         <div
           className="col-1 city-item-container"

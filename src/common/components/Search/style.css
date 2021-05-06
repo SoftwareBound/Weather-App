@@ -4,7 +4,11 @@
 
 #dropdown-basic {
   width: 400px;
-  background-color: #e3f2fd;
+  /*  background-color: #e3f2fd;  */
+  /* background-color: inherit;
+  border-color: inherit; */
+  background-color: inherit;
+  border-color: black;
 }
 
 .search-input {
@@ -13,7 +17,7 @@
 }
 
 .search-icon {
-  position: absolute;
+  /* position: absolute;
   right: 30px;
-  color: grey;
+  color: grey; */
 }

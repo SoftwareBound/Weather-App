@@ -5,47 +5,49 @@ import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Favorites from "./favorites/FavoritesContainer";
-import TestComponent from "./TestComponent";
+import { ThemeProvider } from "styled-components";
+import { lightTheme, darkTheme } from "./theme";
+import { GlobalStyles, NavBarStyle } from "./global";
+import "./style.css";
+import { useState } from "react";
 function App() {
+  const [theme, setTheme] = useState("light");
+  const toggleTheme = () => {
+    if (theme === "light") {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  };
   return (
-    <>
-      <Provider store={store}>
-        <Router>
-          <Navbar />
-          <div className="container">
-            <Switch>
-              <Route exact path="/">
-                <div
-                  className="row search"
-                  style={{
-                    margin: "auto",
-                    width: "fit-content",
-                    marginTop: "30px",
-                  }}
-                >
-                  <Search />
-                </div>
-                <div
-                  className="row forecast-container container"
-                  style={{
-                    margin: "auto",
-                    width: "90%",
-                    minHeight: "400px",
-                    marginTop: "30px",
-                    border: "solid",
-                  }}
-                >
-                  {<ForecastContainer />}
-                </div>
-              </Route>
-              <Route path="/favorites">
-                <Favorites />
-              </Route>
-            </Switch>
-          </div>
-        </Router>
-      </Provider>
-    </>
+    <div>
+      <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+        <GlobalStyles />
+        <Provider store={store}>
+          <Router>
+            <NavBarStyle>
+              <Navbar toggleChange={toggleTheme} themeValue={theme} />
+            </NavBarStyle>
+
+            <div className="container">
+              <Switch>
+                <Route exact path="/">
+                  <div className="row search">
+                    <Search />
+                  </div>
+                  <div className="row main-forecast-container container">
+                    {<ForecastContainer />}
+                  </div>
+                </Route>
+                <Route path="/favorites">
+                  <Favorites />
+                </Route>
+              </Switch>
+            </div>
+          </Router>
+        </Provider>
+      </ThemeProvider>
+    </div>
   );
 }
 
