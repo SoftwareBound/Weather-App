@@ -58,6 +58,25 @@ export const ThemeButton = styled.button`
   }
 `;
 
+export const ScaleButton = styled.button`
+  border: outset;
+  border-color: ${(props) => props.theme.buttonBorderColor};
+  padding: 0.27em;
+  border-radius: 10px;
+  border-width: 0.2em;
+  color: ${(props) => props.theme.buttonTextColor};
+  background: ${(props) => props.theme.buttonBackground};
+  width: 4em;
+  border-width: thick;
+  margin-top: 0.19rem;
+  font-size: large;
+  @media (max-width: 2000px) {
+    &:hover {
+      background: ${(props) => props.theme.buttonColorHover};
+    }
+  }
+`;
+
 export const SearchBox = styled.div`
   background: ${(props) => props.theme.searchboxColor};
 `;

@@ -7,7 +7,8 @@ import {
   NavBarButtons,
   NavBarTitle,
   ThemeButton,
-  ThemeButtonContainer,
+  ScaleButton,
+  ThemeButtonText,
 } from "../../../global";
 import { useDispatch, useSelector } from "react-redux";
 import { changeDegreeScale } from "../../../redux/actions/scaleActions";
@@ -36,10 +37,10 @@ const Navbar = ({ toggleChange, themeValue }) => {
               <span className="fav-icon"> {iconsList.FAV_ICON}</span>
             </Link>
           </li>
-          <li className="nav-item nav-link  ">
-            <ThemeButton onClick={() => dispatch(changeDegreeScale())}>
+          <li className="nav-item  ">
+            <ScaleButton onClick={() => dispatch(changeDegreeScale())}>
               {scale}
-            </ThemeButton>
+            </ScaleButton>
           </li>
           <li className="nav-item nav-link theme-toggle ">
             <ThemeButton onClick={() => toggleChange()}>
@@ -47,7 +48,8 @@ const Navbar = ({ toggleChange, themeValue }) => {
                 ? iconsList.SUN_ICON
                 : iconsList.MOON_ICON}
             </ThemeButton>
-            <span> Theme Toggle</span>
+
+            {<span> Theme Toggle</span>}
           </li>
         </ul>
       </nav>

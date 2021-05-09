@@ -24,7 +24,16 @@ const Search = () => {
   useEffect(() => {
     if (text) {
       if (!/[a-zA-Z]/.test(text.charAt(text.length - 1))) {
-        alert("not an english letter,please correct");
+        alert("not an english letter,please use only english letters");
+        if (text.length > 1) {
+          const lastValidText = text.substring(0, text.length - 1);
+          setText(lastValidText);
+          return;
+        }
+        if (text.length) {
+          setText("");
+          return;
+        }
       }
     }
 
@@ -46,11 +55,7 @@ const Search = () => {
     setText(name);
     setSelectedCityData([]);
   };
-  const checkStateorCountry = (city) => {
-    return city.LocalizedName === city.AdministrativeArea.LocalizedName
-      ? city.Country.LocalizedName
-      : city.AdministrativeArea.LocalizedName;
-  };
+
   return (
     <div className="search-container">
       <Dropdown>

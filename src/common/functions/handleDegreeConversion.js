@@ -22,7 +22,7 @@ export function isMetric(scale) {
 export function checkDegreeScale(scale, value, unit) {
   if (scale === "C") {
     if (isMetric(unit)) {
-      return [value, " ", unit];
+      return [value.toFixed(1), " ", unit];
     } else {
       return [fahrToCelNumber(value), " ", fahrToCelText()];
     }

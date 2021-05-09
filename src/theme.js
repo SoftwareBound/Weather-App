@@ -15,6 +15,7 @@ export const lightTheme = {
   searchboxIconColor: "grey",
   buttonBackground: "#e3f2fd",
   cityItemFontColor: "black",
+  themeButtonText: "black",
 };
 
 export const darkTheme = {
@@ -34,4 +35,5 @@ export const darkTheme = {
   searchboxIconColor: "white",
   buttonBackground: "gray",
   cityItemFontColor: "#736d6d",
+  themeButtonText: "white",
 };

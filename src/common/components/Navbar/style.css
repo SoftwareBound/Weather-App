@@ -22,6 +22,7 @@
   opacity: 1;
   color: black;
 }
+
 @media only screen and (max-width: 520px) {
   .home-icon {
     display: flex;
