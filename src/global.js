@@ -40,7 +40,23 @@ export const NavBarTitle = styled.span`
   font-size: x-large;
 `;
 
-export const ThemeButton = styled.button``;
+export const ThemeButton = styled.button`
+  border: outset;
+  border-color: ${(props) => props.theme.buttonBorderColor};
+  padding: 0.17em;
+  border-radius: 10px;
+  border-width: 0.2em;
+  color: ${(props) => props.theme.buttonTextColor};
+  background: ${(props) => props.theme.buttonBackground};
+  width: 4em;
+  border-width: thick;
+  margin-top: -0.29rem;
+  @media (max-width: 2000px) {
+    &:hover {
+      background: ${(props) => props.theme.buttonColorHover};
+    }
+  }
+`;
 
 export const ThemeButtonContainer = styled.li``;
 
@@ -60,4 +76,11 @@ export const SearchBoxInputIcons = styled.span`
   position: absolute;
   right: 30px;
   color: ${(props) => props.theme.searchboxIconColor};
+`;
+
+export const CityItem = styled.div`
+  text-align: center;
+  display: inline-block;
+  color: #736d6d;
+  color: ${(props) => props.theme.cityItemFontColor};
 `;

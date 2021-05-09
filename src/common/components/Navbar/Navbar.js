@@ -32,13 +32,17 @@ const Navbar = ({ toggleChange, themeValue }) => {
               <span className="fav-icon"> {iconsList.FAV_ICON}</span>
             </Link>
           </li>
-          <ThemeButtonContainer className="nav-item">
-            <ThemeButton onClick={() => toggleChange()}>
+          <li className="nav-item"></li>
+          <li className="nav-item nav-link">
+            {/* <Link className="nav-link" to="/"> */}
+            <ThemeButton onClick={() => toggleChange()} className="fav-text">
               {themeValue === "light"
                 ? iconsList.SUN_ICON
                 : iconsList.MOON_ICON}
             </ThemeButton>
-          </ThemeButtonContainer>
+            <span className="fav-icon"> {iconsList.FAV_ICON}</span>
+            {/* </Link> */}
+          </li>
         </ul>
       </nav>
     </div>

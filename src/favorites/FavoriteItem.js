@@ -1,11 +1,12 @@
 import React from "react";
 import { iconUrls } from "../common/constants/urls";
 import { setWeatherImage } from "../common/functions/imageFunctions";
+import { CityItem } from "../global";
 import "./style.css";
 
 const FavoriteItem = ({ data }) => {
   return (
-    <div className="col city-item">
+    <CityItem className="col">
       <div>{data.name}</div>
       <div>{data.country}</div>
       <div>
@@ -21,7 +22,7 @@ const FavoriteItem = ({ data }) => {
         />
       </span>
       <div>{data.currentWeather.WeatherText}</div>
-    </div>
+    </CityItem>
   );
 };
 

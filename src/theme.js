@@ -13,6 +13,8 @@ export const lightTheme = {
   searchboxPlaceholderColor: "black",
   searchboxInputTextColor: "black",
   searchboxIconColor: "grey",
+  buttonBackground: "#e3f2fd",
+  cityItemFontColor: "black",
 };
 
 export const darkTheme = {
@@ -30,4 +32,6 @@ export const darkTheme = {
   searchboxPlaceholderColor: "white",
   searchboxInputTextColor: "white",
   searchboxIconColor: "white",
+  buttonBackground: "gray",
+  cityItemFontColor: "#736d6d",
 };
