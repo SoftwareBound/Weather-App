@@ -12,7 +12,16 @@
 .fav-icon {
   display: none;
 }
-
+.theme-toggle span {
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+.theme-toggle:hover span {
+  visibility: visible;
+  opacity: 1;
+  color: black;
+}
 @media only screen and (max-width: 520px) {
   .home-icon {
     display: flex;

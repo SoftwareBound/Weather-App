@@ -23,7 +23,6 @@ const ForecastContainer = () => {
         currentPositionWeatherData.Country.EnglishName
       )
     );
-    console.log(currentPositionWeatherData);
   }
 
   function geopoistionLocationError(error) {

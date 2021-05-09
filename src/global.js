@@ -58,8 +58,6 @@ export const ThemeButton = styled.button`
   }
 `;
 
-export const ThemeButtonContainer = styled.li``;
-
 export const SearchBox = styled.div`
   background: ${(props) => props.theme.searchboxColor};
 `;

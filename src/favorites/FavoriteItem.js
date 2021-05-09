@@ -3,15 +3,20 @@ import { iconUrls } from "../common/constants/urls";
 import { setWeatherImage } from "../common/functions/imageFunctions";
 import { CityItem } from "../global";
 import "./style.css";
-
+import { checkDegreeScale } from "../common/functions/handleDegreeConversion";
+import { useSelector } from "react-redux";
 const FavoriteItem = ({ data }) => {
+  const scale = useSelector((state) => state.scaleReducer);
   return (
     <CityItem className="col">
       <div>{data.name}</div>
       <div>{data.country}</div>
       <div>
-        {data.currentWeather.Temperature.Metric.Value}{" "}
-        {data.currentWeather.Temperature.Metric.Unit}
+        {checkDegreeScale(
+          scale,
+          data.currentWeather.Temperature.Metric.Value,
+          data.currentWeather.Temperature.Metric.Unit
+        )}
       </div>
       <span>
         <img

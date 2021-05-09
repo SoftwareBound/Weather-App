@@ -11,3 +11,7 @@ export const favoritesActions = {
   ADD_CITY_TO_FAVORITES: "ADD_CITY_TO_FAVORITES",
   REMOVE_CITY_FROM_FAVORITES: "REMOVE_CITY_FROM_FAVORITES",
 };
+
+export const scaleActions = {
+  CHANGE_DEGREE_SCALE: "CHANGE_DEGREE_SCALE",
+};

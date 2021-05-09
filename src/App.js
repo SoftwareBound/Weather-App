@@ -12,11 +12,19 @@ import "./style.css";
 import { useState } from "react";
 function App() {
   const [theme, setTheme] = useState("light");
+  const [degreeScale, setDegreeScale] = useState("C");
   const toggleTheme = () => {
     if (theme === "light") {
       setTheme("dark");
     } else {
       setTheme("light");
+    }
+  };
+  const toggleScale = () => {
+    if (theme === "C") {
+      setTheme("F");
+    } else {
+      setTheme("C");
     }
   };
   return (

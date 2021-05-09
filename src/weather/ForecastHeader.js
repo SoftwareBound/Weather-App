@@ -1,10 +1,10 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setWeatherImage } from "../common/functions/imageFunctions";
 import { iconUrls } from "../common/constants/urls";
 import { iconsList } from "../common/constants/icons";
 import "./style.css";
-
+import { checkDegreeScale } from "../common/functions/handleDegreeConversion";
 import {
   addFavouriteCity,
   removeFavouriteCity,
@@ -12,6 +12,7 @@ import {
 
 const ForecastHeader = ({ currentCityData, favouriteList }) => {
   const dispatch = useDispatch();
+  const scale = useSelector((state) => state.scaleReducer);
   const isCityinFavouritesList = () => {
     const filteredList = favouriteList.filter(
       (city) => city.id === currentCityData.cityDetails.id
@@ -52,7 +53,11 @@ const ForecastHeader = ({ currentCityData, favouriteList }) => {
       </div>
       <div className="col-4 current-weather-details">
         <div>{`${currentCityData.cityDetails.name}, ${currentCityData.cityDetails.country}`}</div>
-        {` ${currentCityData.currentWeather.Temperature.Metric.Value} ${currentCityData.currentWeather.Temperature.Metric.Unit}`}
+        {checkDegreeScale(
+          scale,
+          currentCityData.currentWeather.Temperature.Metric.Value,
+          currentCityData.currentWeather.Temperature.Metric.Unit
+        )}
       </div>
       <div className="col-5 fav-icon-container">
         <span className="fav-icon-header" onClick={handleFavoritesRequest}>
