@@ -1,5 +1,5 @@
 export const navbarTitles = {
-  MAIN_NAV: "Herolo Weather Task",
+  MAIN_NAV: "Weather App",
   HOME_NAV: "Home",
   FAV_NAV: "Favorites",
 };

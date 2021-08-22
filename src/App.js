@@ -12,7 +12,7 @@ import "./style.css";
 import { useState } from "react";
 function App() {
   const [theme, setTheme] = useState("light");
-  const [degreeScale, setDegreeScale] = useState("C");
+
   const toggleTheme = () => {
     if (theme === "light") {
       setTheme("dark");
@@ -20,13 +20,7 @@ function App() {
       setTheme("light");
     }
   };
-  const toggleScale = () => {
-    if (theme === "C") {
-      setTheme("F");
-    } else {
-      setTheme("C");
-    }
-  };
+
   return (
     <div>
       <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
@@ -39,7 +33,7 @@ function App() {
 
             <div className="container">
               <Switch>
-                <Route exact path="/">
+                <Route exact path="/home">
                   <div className="row search">
                     <Search />
                   </div>

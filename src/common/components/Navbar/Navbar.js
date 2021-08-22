@@ -21,7 +21,7 @@ const Navbar = ({ toggleChange, themeValue }) => {
         <NavBarTitle className>{navbarTitles.MAIN_NAV}</NavBarTitle>
         <ul className="navbar-nav nav-list ">
           <li className="nav-item">
-            <Link className="nav-link " to="/">
+            <Link className="nav-link " to="/home">
               <NavBarButtons className="home-text">
                 {navbarTitles.HOME_NAV}
               </NavBarButtons>
