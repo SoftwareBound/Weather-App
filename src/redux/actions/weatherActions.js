@@ -4,7 +4,7 @@ import {
 } from "../../common/constants/actionType";
 import { getData } from "../../common/functions/getDataFromApi";
 import { weatherUrls, apiKeyUrls } from "../../common/constants/urls";
-import { defaultCityDetails } from "../../common/constants/titles";
+/* import { defaultCityDetails } from "../../common/constants/titles"; for testing reasons*/
 
 export function setSelectedCityData(key, name) {
   return {

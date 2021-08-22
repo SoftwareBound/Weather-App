@@ -33,16 +33,16 @@ function App() {
 
             <div className="container">
               <Switch>
-                <Route exact path="/home">
+                <Route path="/favorites">
+                  <Favorites />
+                </Route>
+                <Route path="/">
                   <div className="row search">
                     <Search />
                   </div>
                   <div className="row main-forecast-container container">
                     {<ForecastContainer />}
                   </div>
-                </Route>
-                <Route path="/favorites">
-                  <Favorites />
                 </Route>
               </Switch>
             </div>

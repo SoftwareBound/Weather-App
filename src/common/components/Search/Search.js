@@ -9,7 +9,7 @@ import {
 } from "../../../global";
 import Dropdown from "react-bootstrap/Dropdown";
 import { getData } from "../../functions/getDataFromApi";
-import { searchUrls, apiKeyUrls, weatherUrls } from "../../constants/urls";
+import { searchUrls, apiKeyUrls } from "../../constants/urls";
 import { useDispatch } from "react-redux";
 import { setSelectedCityData } from "../../../redux/actions/weatherActions";
 
@@ -17,13 +17,13 @@ import { loadCurrentCityWeather } from "../../../redux/actions/weatherActions";
 
 const Search = () => {
   const [text, setText] = useState("");
-  const [value] = useDebounce(text, 500);
+  const [value] = useDebounce(text, 200);
   const [cityArr, setCityArr] = useState([]);
   const dispatch = useDispatch();
 
   useEffect(() => {
     if (text) {
-      if (!/[a-zA-Z]/.test(text.charAt(text.length - 1))) {
+      if (!/[a-zA-Z\s]/.test(text.charAt(text.length - 1))) {
         alert("not an english letter,please use only english letters");
         if (text.length > 1) {
           const lastValidText = text.substring(0, text.length - 1);
