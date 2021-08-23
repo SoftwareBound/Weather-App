@@ -2,7 +2,7 @@
 // APIKEYS WILL NOT BE STORED IN THE FRONTEND,NEVER!!!
 
 export const apiKeys = {
-  WEATHER_APIKEY: "vM6VW4AdspAAhri19e6sH8YWdgLAwLjO",
+  WEATHER_APIKEY: "QngsUcOOCIoOXVq74UsT9jTGMyFs9edo",
 };
 
 //benzvi.ron api vM6VW4AdspAAhri19e6sH8YWdgLAwLjO

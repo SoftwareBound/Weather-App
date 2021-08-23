@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import ForecastHeader from "./ForecastHeader";
 import { useDispatch, useSelector } from "react-redux";
 import { defaultCityDetails } from "../common/constants/titles";
@@ -12,17 +12,23 @@ const ForecastContainer = () => {
   const dispatch = useDispatch();
   const currentCity = useSelector((state) => state.weatherReducer);
   const favouriteList = useSelector((state) => state.favoritesReducer);
+  const [infoMessage, setInfoMessage] = useState("Loading...");
   async function geopoistionLocationSuccess(poistion) {
-    const currentPositionWeatherData = await getData(
-      `${searchUrls.COORDINATES_CITY_SEARCH}${poistion.coords.latitude}%2C${poistion.coords.longitude}`
-    );
-    dispatch(
-      loadCurrentCityWeather(
-        currentPositionWeatherData.Key,
-        currentPositionWeatherData.EnglishName,
-        currentPositionWeatherData.Country.EnglishName
-      )
-    );
+    try {
+      const currentPositionWeatherData = await getData(
+        `${searchUrls.COORDINATES_CITY_SEARCH}${poistion.coords.latitude}%2C${poistion.coords.longitude}`
+      );
+      dispatch(
+        loadCurrentCityWeather(
+          currentPositionWeatherData.Key,
+          currentPositionWeatherData.EnglishName,
+          currentPositionWeatherData.Country.EnglishName
+        )
+      );
+    } catch (e) {
+      console.log(e.message);
+      setInfoMessage(e.message);
+    }
   }
 
   function geopoistionLocationError(error) {
@@ -37,6 +43,7 @@ const ForecastContainer = () => {
   }
 
   useEffect(() => {
+    console.log(Object.values(currentCity));
     if (!Object.values(currentCity).length) {
       if (!navigator.geolocation) {
         alert(`Your browser don't support geolocation `);
@@ -59,7 +66,7 @@ const ForecastContainer = () => {
   if (Object.values(currentCity).length < 3) {
     return (
       <div className="d-flex align-items-center">
-        <strong>Loading...</strong>
+        <strong>{infoMessage}</strong>
         <div
           className="spinner-border ms-auto"
           role="status"

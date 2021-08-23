@@ -1,6 +1,13 @@
 export async function getData(url) {
-  const data = await fetch(url);
-  const jsonData = await data.json();
+  try {
+    const data = await fetch(url);
+    const jsonData = await data.json();
+    return jsonData;
+  } catch {
+    throw new Error("Server is not responding, please try later");
+  }
 
-  return jsonData;
+  /* 
+  console.log(`jsonData = ${jsonData}`);
+   */
 }
